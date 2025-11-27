@@ -23,8 +23,8 @@ jobs:
       - name: Grant mvnw permission
         run: chmod +x mvnw
 
-      - name: Build (skip tests)
-        run: ./mvnw clean package -DskipTests
+      - name: Build
+        run: ./mvnw test
 
 
   deploy:
