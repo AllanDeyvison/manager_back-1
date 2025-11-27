@@ -36,7 +36,7 @@ public class UserControllerTest {
     private UserService userService;
 
     @Autowired
-    private ObjectMapper objectMapper;
+    private ObjectMapper mapper;
 
     @MockBean
     private UserRepository userRepository;
@@ -50,7 +50,7 @@ public class UserControllerTest {
 
     private User user;
 
-    private final ObjectMapper mapper = new ObjectMapper();
+    // private final ObjectMapper mapper = new ObjectMapper();
 
     @BeforeEach
     void setup() {
