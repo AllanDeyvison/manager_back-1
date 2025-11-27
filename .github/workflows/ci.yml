@@ -6,7 +6,7 @@ on:
 
 jobs:
   test:
-    name: Build without tests
+    name: Build JAVA
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,11 @@ jobs:
       - name: Grant mvnw permission
         run: chmod +x mvnw
 
+      - name: Download dependencies
+        run: ./mvnw dependency:go-offline
+
       - name: Build
-        run: ./mvnw test
+        run: ./mvnw -B clean test
 
 
   deploy:
