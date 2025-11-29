@@ -1,4 +1,4 @@
-# Manager Back - JAVA
+# Manager Back
 
 ## Visão Geral
 
