@@ -13,13 +13,18 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Function;
+import org.springframework.beans.factory.annotation.Value;
 
 @Component
 public class JwtService {
-    public static final String SECRET = "b3768f30609653634a8f882f18f3e19f7c2059f7b95537194385612281d47101";
+    private final String secret;
+
+    public JwtService(@Value("${security.jwt.secret}") String secret) {
+        this.secret = secret;
+    }
 
     private Key getSignKey(){
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET);
+        byte[] keyBytes = Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
